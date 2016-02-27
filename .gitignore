@@ -5,6 +5,6 @@
 META-INF
 
 bin
-*jar
+/*jar
 *jardesc
 *class
