@@ -1,0 +1,10 @@
+.classpath
+.externalToolBuilders
+.project
+.settings
+META-INF
+
+bin
+*jar
+*jardesc
+*class

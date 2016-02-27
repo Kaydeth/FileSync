@@ -1,0 +1,35 @@
+//Makes the classes generated in the UlticomADC namespace
+package sliner.com;
+
+//Make sure the class generator makes the fastest classes it can make
+//option optimize_for = LITE_RUNTIME; //can't get LITE version compiled
+//Turn off generation of RPC hooks in our classes. We don't use RPC.
+option java_generic_services = false;
+//option allow_alias = true;
+
+// protoc FileSyncMessage.proto --java_out=./
+//Main message defintion.
+message FileSyncMessage
+{
+	required FileSyncHeader header = 1; //test
+}
+
+message FileSyncHeader
+{
+	enum FileSyncVersion {
+		VERSION_ONE = 1;
+	}
+	required FileSyncVersion version = 1;
+	
+	enum FileSyncMessageType {
+		HELLO_MSG = 1;
+		DIR_EXCHANGE = 2;
+	}
+	
+	required FileSyncMessageType msg_type = 2;
+}
+
+message FileSyncDirExchange
+{
+	required string directory = 1;
+}
